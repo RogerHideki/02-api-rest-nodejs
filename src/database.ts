@@ -1,11 +1,12 @@
 import { knex as setupKnex, Knex } from 'knex'
+import { env } from './env'
 
 export const config: Knex.Config = {
   client: 'oracledb',
   connection: {
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
-    connectString: process.env.DATABASE_CONNECT_STRING,
+    user: env.DATABASE_USER,
+    password: env.DATABASE_PASSWORD,
+    connectString: env.DATABASE_CONNECT_STRING,
   },
   migrations: {
     extension: 'ts',
