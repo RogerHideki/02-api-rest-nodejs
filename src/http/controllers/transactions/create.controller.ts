@@ -3,7 +3,10 @@ import { z } from 'zod'
 import { knex } from '../../../database'
 import { randomUUID } from 'node:crypto'
 
-export async function create(request: FastifyRequest, reply: FastifyReply) {
+export async function createController(
+  request: FastifyRequest,
+  reply: FastifyReply,
+) {
   const createTransactionBodySchema = z.object({
     title: z.string(),
     amount: z.number(),
