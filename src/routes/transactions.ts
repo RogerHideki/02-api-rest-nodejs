@@ -3,7 +3,7 @@ import { knex } from '../database'
 import { z } from 'zod'
 import { randomUUID } from 'node:crypto'
 
-export async function transactionsRoutes(app: FastifyInstance) {
+export async function _transactionsRoutes(app: FastifyInstance) {
   app.get('/', async () => {
     const transactions = await knex('transactions').select()
 
